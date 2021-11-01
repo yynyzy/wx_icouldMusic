@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "window":{
+    "navigationBarBackgroundColor": "#d43c33",
+    "navigationBarTitleText": "YCloudMusic",
+    "navigationBarTextStyle": "white"
+  }
+}

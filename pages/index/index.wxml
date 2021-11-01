@@ -1,0 +1,56 @@
+<view>
+  <swiper class="banners" indicator-dots indicator-active-color="#d43c33" indicator-color="ivory">
+    <swiper-item>
+      <image src="/static/images/nvsheng.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+    <image src="/static/images/nvsheng.jpg"></image>
+    </swiper-item>
+      <swiper-item>
+    <image src="/static/images/nvsheng.jpg"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 五个图标导航区域 -->
+  <view class="navContainer">
+    <view class="navItem">
+      <text class='iconfont icon-meirituijian'></text>
+      <text>每日推荐</text>
+    </view>
+    <view class="navItem">
+      <text class='iconfont icon-gedan1'></text>
+      <text>歌单</text>
+    </view>
+    <view class="navItem">
+      <text class='iconfont icon-icon-ranking'></text>
+      <text>排行榜</text>
+    </view>
+    <view class="navItem">
+      <text class='iconfont icon-diantai'></text>
+      <text>电台</text>
+    </view>
+    <view class="navItem">
+      <text class='iconfont icon-zhiboguankanliangbofangsheyingshexiangjixianxing'></text>
+      <text>直播</text>
+    </view>
+  </view>
+
+<!-- 推荐歌曲区 -->
+  <view class="recommandContainer">
+    <view class="header">
+      <text class="header">推荐歌曲</text>
+      <view>
+        <text>为你精心推荐更多</text>
+        <text class="more">查看更多</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 内容区 -->
+  <scroll-view>
+    <view class="scrollitem">
+    <image src="/static/images/nvsheng.jpg"></image>
+    </view>
+    <text>我yynyzy</text>
+  </scroll-view>
+</view>
