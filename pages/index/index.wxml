@@ -47,10 +47,26 @@
   </view>
 
   <!-- 内容区 -->
-  <scroll-view>
+  <scroll-view enable-flex class="recommandScroll" scroll-X>
     <view class="scrollitem">
     <image src="/static/images/nvsheng.jpg"></image>
+     <text>我yynyzysssssssssss我yynyzysssssssssss</text>
     </view>
-    <text>我yynyzy</text>
+   <view class="scrollitem">
+    <image src="/static/images/nvsheng.jpg"></image>
+     <text>我yynyzy</text>
+    </view>
+    <view class="scrollitem">
+    <image src="/static/images/nvsheng.jpg"></image>
+     <text>我yynyzy</text>
+    </view>
+    <view class="scrollitem">
+    <image src="/static/images/nvsheng.jpg"></image>
+     <text>我yynyzy</text>
+    </view>
+    <view class="scrollitem">
+    <image src="/static/images/nvsheng.jpg"></image>
+     <text>我yynyzy</text>
+    </view>
   </scroll-view>
 </view>

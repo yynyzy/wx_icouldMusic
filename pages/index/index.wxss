@@ -37,6 +37,9 @@
 .recommandContainer{
   padding:20rpx 
 }
+.recommandContainer .header {
+  padding-bottom: 20rpx
+}
 .recommandContainer .header .title {
   font-size: 32rpx;
   line-height: 80rpx;
@@ -46,6 +49,31 @@
 .recommandContainer .header .more{
   float: right;
   border: 1px solid #333;
-  padding: 20rpx 30rpx;
-  font-size: 26rpx;
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+  border-radius: 30rpx
+}
+
+  /* 内容区  */
+.recommandScroll{
+display: flex
+}
+.scrollitem {
+  width: 200rpx;
+  margin-right: 20rpx
+}
+.scrollitem image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx
+}
+
+.scrollitem text {
+    font-size: 26rpx;
+
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp:2; 
+  overflow: hidden;
+  text-overflow: ellipsis
 }
