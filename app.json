@@ -1,12 +1,40 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/personal/personal",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/vedio/vedio"
   ],
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "window":{
+  "window": {
     "navigationBarBackgroundColor": "#d43c33",
     "navigationBarTitleText": "YCloudMusic",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "d43c33",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "static/images/tabs/tab-home.png",
+        "selectedIconPath": "static/images/tabs/tab-home-current.png"
+      },
+      {
+        "pagePath": "pages/vedio/vedio",
+        "text": "视频",
+        "iconPath": "static/images/tabs/select.png",
+        "selectedIconPath": "static/images/tabs/selected.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心",
+        "iconPath": "static/images/tabs/tab-my.png",
+        "selectedIconPath": "static/images/tabs/tab-my-current.png"
+      }
+    ]
   }
 }
