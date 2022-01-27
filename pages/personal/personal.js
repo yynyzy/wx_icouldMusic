@@ -1,3 +1,4 @@
+import request from "../../Utils/request.js"
 let startY =0
 let moveY =0
 let moveDistance =0
@@ -9,7 +10,8 @@ Page({
   data: {
       coverTransform:'translateY(0)',
     coverTranslate:'',
-    userInfo:''
+    userInfo:'',
+    recentPlayList:[]
   },
 
   /**
@@ -21,7 +23,19 @@ Page({
       this.setData({
         userInfo:JSON.parse(userInfo)
       })
+      this.getUserRecentPlayList(this.data.userInfo.userId)
     }
+  },
+  async getUserRecentPlayList(userId){
+    let recentPlayListData = await request('/user/record',{uid:userId,type:0})
+    let index = 0
+    recentPlayListData = recentPlayListData.allData.splice(0,10).map(item =>{
+      item.id =index++
+      return item
+    })
+    this.setData({
+      recentPlayList: recentPlayListData
+    })
   },
   handleTouchStart(event){
     startY =event.touches[0].clientY

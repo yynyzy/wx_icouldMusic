@@ -17,8 +17,7 @@
       </view>
       <view class="tit">
         <!-- 会员图标-->
-        <text class="iconfont icon-huiyuan-"></text>
-        网易云会员
+        <text class="iconfont icon-huiyuan-"></text> 网易云会员
       </view>
       <text class="e-m">atguigu Union</text>
       <text class="e-b">开通会员听歌</text>
@@ -26,28 +25,23 @@
   </view>
 
 
-  <view class="cover-container" 
-  bindtouchstart="handleTouchStart"
-  bindtouchmove="handleTouchMove"
-  bindtouchend="handleTouchEnd"
-  style="transform:{{coverTransform}};transition:{{coverTranslate}}"
-  >
+  <view class="cover-container" bindtouchstart="handleTouchStart" bindtouchmove="handleTouchMove" bindtouchend="handleTouchEnd" style="transform:{{coverTransform}};transition:{{coverTranslate}}">
     <image class="arc" src="/static/images/personal/arc.png"></image>
     <!-- 个人中心导航 -->
     <view class="nav-section">
-      <view class="nav-item"  hover-class="common-hover"  hover-stay-time="50">
+      <view class="nav-item" hover-class="common-hover" hover-stay-time="50">
         <text class="iconfont icon-xiaoxi"></text>
         <text>我的消息</text>
       </view>
-      <view class="nav-item"   hover-class="common-hover" hover-stay-time="50">
+      <view class="nav-item" hover-class="common-hover" hover-stay-time="50">
         <text class="iconfont icon-myRecommender"></text>
         <text>我的好友</text>
       </view>
-      <view class="nav-item"  hover-class="common-hover"  hover-stay-time="50">
+      <view class="nav-item" hover-class="common-hover" hover-stay-time="50">
         <text class="iconfont icon-gerenzhuye"></text>
         <text>个人主页</text>
       </view>
-      <view class="nav-item" hover-class="common-hover"  hover-stay-time="50">
+      <view class="nav-item" hover-class="common-hover" hover-stay-time="50">
         <text class="iconfont icon-gexingzhuangban"></text>
         <text>个性装扮</text>
       </view>
@@ -58,6 +52,11 @@
       <view class="recentPlayContainer">
         <text class="title">最近播放</text>
         <!-- 最近播放记录 -->
+        <scroll-view scroll-x class="recentScroll" enable-flex>
+          <view class="recentItem" wx:for="{{recentPlayList}}" wx:key="{{id}}">
+            <image src="{{item.song.al.picUrl}}"></image>
+          </view>
+        </scroll-view>
       </view>
 
       <view class="cardList">
@@ -78,4 +77,3 @@
   </view>
 
 </view>
-
