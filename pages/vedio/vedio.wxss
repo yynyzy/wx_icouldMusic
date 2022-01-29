@@ -86,6 +86,10 @@
   float: right;
 }
 
+.comments_praised .btn {
+  display: inline;
+}
+
 .comments_praised .btn:after {
   border: none;
 }
