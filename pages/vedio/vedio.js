@@ -6,7 +6,8 @@ Page({
    */
   data: {
     videoGroupList:[],
-    navId:''
+    navId:'',
+    videoList:[]
   },
 
   /**
@@ -20,6 +21,21 @@ Page({
     this.setData({
       videoGroupList:videoGroupListData.data.slice(0,14),
       navId:videoGroupListData.data[0].id
+    })
+    this.getVideoList(this.data.navId)
+  },
+  async getVideoList(navId){
+    if (!navId){
+      return 
+    }
+    let videoListData = await request('/video/group',{id:navId})
+    let index=0
+    let videoList =  videoListData.datas.map(item=>{
+      item.id = index++ 
+      return item
+    } )
+    this.setData({
+      videoList
     })
   },
   changeNav(event){
