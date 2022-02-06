@@ -29,6 +29,7 @@ Page({
       return 
     }
     let videoListData = await request('/video/group',{id:navId})
+    wx.hideLoading()
     let index=0
     let videoList =  videoListData.datas.map(item=>{
       item.id = index++ 
@@ -41,8 +42,19 @@ Page({
   changeNav(event){
     let navId = event.currentTarget.id
     this.setData({
-      navId:navId>>>0
+      navId:navId>>>0,
+      videoList:[]
     })
+    wx.showLoading({
+      title: '正在加载',
+    })
+    this.getVideoList(this.data.navId)
+  },
+  handlePlay(event){
+    let vid =event.currentTarget.id
+    this.vid!==vid && this.videoContext && this.videoContext.stop()
+    this.vid = vid 
+    this.videoContext = wx.createVideoContext(vid)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -5,8 +5,14 @@
     <image src="/static/images/logo.png"></image>
   </view>
 
-  <scroll-view scroll-x class="navScroll" enable-flex>
-    <view class="navItem" wx:for="{{videoGroupList}}" wx:key="id">
+  <scroll-view 
+  scroll-x 
+  class="navScroll" 
+  enable-flex 
+  scroll-into-view="{{'scroll'+navId}}"
+  scroll-with-animation
+  >
+    <view id="{{'scroll'+item.id}}" class="navItem" wx:for="{{videoGroupList}}" wx:key="id">
       <view class="navContent {{navId === item.id?'active':''}}" bindtap="changeNav" id="{{item.id}}">
         {{item.name}}
       </view>
@@ -15,7 +21,10 @@
 
   <scroll-view scroll-y class="videoScroll">
     <view class="videoItem" wx:for="{{videoList}}" wx:key="id">
-      <video src="{{item.data.urlInfo.url}}"></video>
+      <video
+       src="{{item.data.urlInfo.url}}"
+      bindtap="handlePlay"
+      ></video>
 
       <view class="content">{{item.data.title}}</view>
 
