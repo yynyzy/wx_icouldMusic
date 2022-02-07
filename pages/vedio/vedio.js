@@ -7,7 +7,8 @@ Page({
   data: {
     videoGroupList:[],
     navId:'',
-    videoList:[]
+    videoList:[],
+    videoId:""
   },
 
   /**
@@ -54,6 +55,7 @@ Page({
     let vid =event.currentTarget.id
     this.vid!==vid && this.videoContext && this.videoContext.stop()
     this.vid = vid 
+    this.setData({videoId:vid})
     this.videoContext = wx.createVideoContext(vid)
   },
   /**
