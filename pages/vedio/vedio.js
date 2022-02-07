@@ -53,10 +53,11 @@ Page({
   },
   handlePlay(event){
     let vid =event.currentTarget.id
-    this.vid!==vid && this.videoContext && this.videoContext.stop()
-    this.vid = vid 
+    // this.vid!==vid && this.videoContext && this.videoContext.stop()
+    // this.vid = vid 
     this.setData({videoId:vid})
     this.videoContext = wx.createVideoContext(vid)
+    this.videoContext.play()
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
