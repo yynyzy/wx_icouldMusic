@@ -5,7 +5,7 @@
     <image src="/static/images/logo.png"></image>
   </view>
 
-  <scroll-view 
+ <scroll-view 
   scroll-x 
   class="navScroll" 
   enable-flex 
@@ -17,9 +17,9 @@
         {{item.name}}
       </view>
     </view>
-  </scroll-view>
+</scroll-view>
 
-  <scroll-view scroll-y class="videoScroll">
+<scroll-view scroll-y class="videoScroll">
     <view class="videoItem" wx:for="{{videoList}}" wx:key="id">
       <video
        src="{{item.data.urlInfo.url}}"
