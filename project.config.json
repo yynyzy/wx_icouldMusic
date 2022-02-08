@@ -24,7 +24,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.3",
+	"libVersion": "2.10.2",
 	"appid": "wx22b8dd09cb55eade",
 	"projectname": "wx_yCloudMusic",
 	"debugOptions": {

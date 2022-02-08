@@ -19,7 +19,11 @@
     </view>
 </scroll-view>
 
-<scroll-view scroll-y class="videoScroll">
+<scroll-view 
+scroll-y 
+class="videoScroll"
+bindrefresherrefresh="handleRefresh"
+>
     <view class="videoItem" wx:for="{{videoList}}" wx:key="id">
       <video
         src="{{item.data.urlInfo.url}}"
@@ -30,6 +34,7 @@
         wx:if="{{videoId === item.data.vid}}"
         object-fit="cover"
         bindtimeupdate ="handleTimeUpdate"
+        bindended="handleEnded"
       ></video>
     <image wx:else  id="{{item.data.vid}}" bindtap="handlePlay" class="common" src="{{item.data.coverUrl}}"></image>
 
