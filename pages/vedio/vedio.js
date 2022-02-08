@@ -9,7 +9,8 @@ Page({
     navId:'',
     videoList:[],
     videoId:'',
-    videoUpdateTime:[]
+    videoUpdateTime:[],
+    isTriggered:false
   },
 
   /**
@@ -39,7 +40,8 @@ Page({
       return item
     } )
     this.setData({
-      videoList
+      videoList,
+      isTriggered:false
     })
   },
 
@@ -92,6 +94,9 @@ Page({
     })
   },
   handleRefresh(){
+    this.getVideoList(this.data.navId)
+  },
+  handleToLower(){
 
   },
   /**

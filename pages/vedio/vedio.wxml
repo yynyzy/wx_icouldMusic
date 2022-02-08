@@ -22,7 +22,10 @@
 <scroll-view 
 scroll-y 
 class="videoScroll"
+refresher-enabled
 bindrefresherrefresh="handleRefresh"
+refresher-triggered="{{isTriggered}}"
+bindscrolltolower="handleToLower"
 >
     <view class="videoItem" wx:for="{{videoList}}" wx:key="id">
       <video
