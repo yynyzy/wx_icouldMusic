@@ -8,7 +8,8 @@ Page({
     videoGroupList:[],
     navId:'',
     videoList:[],
-    videoId:""
+    videoId:"",
+    videoUpdateTime:[]
   },
 
   /**
@@ -25,6 +26,7 @@ Page({
     })
     this.getVideoList(this.data.navId)
   },
+
   async getVideoList(navId){
     if (!navId){
       return 
@@ -40,6 +42,7 @@ Page({
       videoList
     })
   },
+
   changeNav(event){
     let navId = event.currentTarget.id
     this.setData({
@@ -51,6 +54,7 @@ Page({
     })
     this.getVideoList(this.data.navId)
   },
+
   handlePlay(event){
     let vid =event.currentTarget.id
     // this.vid!==vid && this.videoContext && this.videoContext.stop()
@@ -58,6 +62,19 @@ Page({
     this.setData({videoId:vid})
     this.videoContext = wx.createVideoContext(vid)
     this.videoContext.play()
+  },
+  handleTimeUpdate(){
+    let videoTimeObj={vid:event.currentTarget.id,currentTime:event.detail.currentTime}
+    let {videoUpdateTime}=this.data
+    let videoItem = videoUpdateTime.find(item=>item.vid===videoTimeObj.vid)
+    if (videoItem){
+      videoUpdateTime.currentTime=event.detail.currentTime
+    }else{
+      videoUpdateTime.push(videoTimeObj)
+    }
+    this.setData({
+      videoUpdateTime
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

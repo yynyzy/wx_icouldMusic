@@ -22,13 +22,14 @@
 <scroll-view scroll-y class="videoScroll">
     <view class="videoItem" wx:for="{{videoList}}" wx:key="id">
       <video
-       src="{{item.data.urlInfo.url}}"
-      bindtap="handlePlay"
-      id="{{item.data.vid}}"
-      poster="{{item.data.coverUrl}}"
-      class="common"
-      wx:if="{{videoId === item.data.vid}}"
-      object-fit="cover"
+        src="{{item.data.urlInfo.url}}"
+        bindtap="handlePlay"
+        id="{{item.data.vid}}"
+        poster="{{item.data.coverUrl}}"
+        class="common"
+        wx:if="{{videoId === item.data.vid}}"
+        object-fit="cover"
+        bindtimeupdate ="handleTimeUpdate"
       ></video>
     <image wx:else  id="{{item.data.vid}}" bindtap="handlePlay" class="common" src="{{item.data.coverUrl}}"></image>
 
