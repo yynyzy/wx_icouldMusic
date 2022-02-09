@@ -144,7 +144,19 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function ({from}) {
+    if(from === 'button'){
+      return {
+        title:'来自以诺的分享~',
+        page:'/page/vedio/vedio',
+        imgeUrl:'/static/images/nvsheng.jpg'
+      }
+    }else{
+      return {
+        title: '来自致远的分享~',
+        page: '/page/vedio/vedio',
+        imgeUrl: '/static/images/nvsheng.jpg'
+      }
+    }
   }
 })
