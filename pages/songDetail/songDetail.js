@@ -1,49 +1,20 @@
-import request from "../../Utils/request.js"
-
+// pages/songDetail/songDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    day:'',
-    month:'',
-    recommondList:[]
+    isPlay:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let userInfo =wx.getStorageSync('userInfo')
-    if (!userInfo){
-      wx.showToast({
-        title: '请先登录',
-        icon:'none',
-        success:()=>{
-          wx.reLaunch({
-            url: '/pages/login/login',
-          })
-        }
-      })
-    }
-    this.setData({
-      day:new Date().getDate(),
-      month:new Date().getMonth()+1
-    })
-    this.getRecommendList()
+
   },
-async getRecommendList(){
-  let recommondListData = await request('/recommend/songs')
-  this.setData({
-    recommondList: recommondListData
-  })
-},
-toSongDetail(){
-  wx.navigateTo({
-    url:'/pages/songDetail/songDetail'
-  })
-},
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
